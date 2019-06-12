@@ -1,0 +1,24 @@
+<div class="container">
+  <button (click)="moveDown()">Down</button>
+  <button (click)="moveUp()">Up</button>
+  <div class="row">
+    <table class="table col-md-12">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employee First</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empData;let i = index;" (click)="selectRow(i)" [ngClass]="selectedIds.indexOf(i)>-1?'active':''">
+          <th scope="row">{{emp.id}}</th>
+          <td>{{emp.employee_name}}</td>
+          <td>{{emp.employee_salary}}</td>
+          <td>{{emp.employee_age}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
